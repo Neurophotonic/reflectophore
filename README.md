@@ -90,8 +90,9 @@ Run time depends on the No. of files (~30s for 100 .asc files).
 line 5  | data_load = dir('#1 sample.asc');
 ``` 
 
-4. If you run the script, one `data.mat` file will be created in workspace with output:   
+4. If you run the script, one `data.mat` file will be created in workspace. In command window following output and spatial intensity heat map will be printed.   
 ```
+Command winodw
 output  | l = 1 # No. of files
 ```
 
