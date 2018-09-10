@@ -7,8 +7,6 @@
 - [Installation Guide](#installation-guide)
 - [Instructions for Use](#instructions-for-use)
 - [License](./LICENSE)
-- [Matlab code](https://github.com/neurodata/mgc-paper/tree/master/Code/MGC)
-- [Citation](#citation)
 
 # Overview
 
@@ -77,4 +75,65 @@ wavelength.mat
 #2 sample.asc
 #3 sample.asc
 #4 sample.asc
+```
+
+## How to run
+
+Run time depends on the No. of files (~30s for 100 .asc files).
+
+1. Save all files in one directory.
+
+2. First, open the script `Find_max_spectrum.m`
+
+3. put the file name at `dir` function (line 5) what you want to analyse. More than one file is available (please see  https://www.mathworks.com/help/matlab/ref/dir.html)   
+```
+line 5  | data_load = dir('#1 sample.asc');
+``` 
+
+4. If you run the script, one `data.mat` file will be created in workspace with output:   
+```
+output  | l = 1 # No. of files
+```
+
+5. After then, open the scipt `reflectophore_curve_fitting.m` 
+
+6. put the file names at `load` and `uigetfile` function to load `wavelength.mat`, `laser_spectrum.mat` and `Simulation_sample_ps_bead_in_water_10-10.5um_1nm_step_(norm.).mat` files. (please see https://www.mathworks.com/help/matlab/ref/uigetfile.html)
+
+```
+line 4  | load('wavelength.mat');
+line 7  | filename = uigetfile('laser_spectrum.mat');
+line 16 | filename = uigetfile('Simulation_sample_ps_bead_in_water_10-10.5um_1nm_step_(norm.).mat');
+```
+
+7. If you run the script, following messages appears on command window. You should set the fitting wavelength range within your light source spectrum. In our example, 550-650 nm was used. After then, you should put the simulated diameter range. In this example, we enter the 10-10.5 um and 1 nm step size because we used the simulation file `Simulation_sample_ps_bead_in_water_10-10.5um_1nm_step_(norm.).mat`.
+
+```
+Command winodw
+Enter the initial range of wavelength(nm) : 550
+Enter the final range of wavelength(nm) : 650
+Enter the simulation lower bound (um) : 10
+Enter the simulation upper bound (um) : 10.5
+Enter the simulation step size (nm) : 1
+```
+
+8. Finally curves and following values will be printed on command window:
+
+```
+Command winodw
+ans =
+
+      10.4980    0.9674  
+      
+      # left one is diameter and right one is correlation coefficient between measured spectrum and fitted simulation curve
+```
+
+9. Following outputs will be printed, if you run this scirpt for each sample files:
+```
+Command winodw
+ans =
+
+      10.4980    0.9674  # #1 sample.asc
+      10.4850    0.9186  # #2 sample.asc
+      3.1570     0.9053  # #3 sample.asc
+      3.1650     0.9345  # #4 sample.asc
 ```
