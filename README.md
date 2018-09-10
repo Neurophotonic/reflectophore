@@ -28,11 +28,8 @@ Tested condition is thought to be overspec. For minimal performance, only 4GB RA
 
 ### Software Requirements
 
-
-MATLAB R2014a
-      
-Toolbox
 ```
+MATLAB R2014a
 statistics and machine learning toolbox
 ```
 
@@ -73,7 +70,7 @@ wavelength.mat
 
 ### sample spectrum
 
-
+4 sample spectrums were prepared in .asc file (1600 rows X 321 column). Column and row mean the number of scanning points and wavelength. First colum is wavelength range that we measured, and other 320 columns are spectrum acquired from scanning volume. #1, 2 and #3, 4 were acquired from 10 um and 4 um of microspheres each other. 
 
 ```
 #1 sample.asc
