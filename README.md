@@ -47,29 +47,37 @@ This package doesn't need any installation because it runs on script.
 
 # Instructions for Use
 
-### File composition
+## File composition
 
 Total 10 files are included in this repository. M-file, sample data for curve fitting and sample spectrum directories contain matlab script, reference data for fitting and sample spectums(asc file), each other.
 
-M-file
+### M-file
+
+To select a spectrum with maximum intensity among the spectrums that acquired by 3D scanning `Find_max_spectrum.m` is needed. After finding the spectrum, `reflectophore_curve_fitting.m` is needed for curve fitting and obtaining the diameter of microsphere from the selected spectrum.     
 
 ```
-find_max_spectrum
-reflectophore_curve_fitting
+find_max_spectrum.m
+reflectophore_curve_fitting.m
 ```
 
-sample data for curve fitting
+### sample data for curve fitting
+
+`Simulation_sample_ps_bead_in_water_3-3.5um_1nm_step_(norm.).mat` and `Simulation_sample_ps_bead_in_water_10-10.5um_1nm_step_(norm.).mat` are pre-calculated thin-film interference simulation database (Due to the file size limitation, the files were splited). Simulated diameter range is 3-3.5 um and 10-10.5 um with a 1 nm of step size for polystyrene micorsphere in water. `laser_spectrum.mat` is sample spectrum for light source which is enssential for normalization of spectrum. `wavelength.mat` is used to set a fitting range.
+
 ```
-Simulation_sample_ps_bead_in_water_3-3.5um_1nm_step_(norm.)
-Simulation_sample_ps_bead_in_water_10-10.5um_1nm_step_(norm.)
-laser_spectrum
-wavelength
+Simulation_sample_ps_bead_in_water_3-3.5um_1nm_step_(norm.).mat
+Simulation_sample_ps_bead_in_water_10-10.5um_1nm_step_(norm.).mat
+laser_spectrum.mat
+wavelength.mat
 ```
 
-sample spectrum
+### sample spectrum
+
+
+
 ```
-#1 sample
-#2 sample
-#3 sample
-#4 sample
+#1 sample.asc
+#2 sample.asc
+#3 sample.asc
+#4 sample.asc
 ```
